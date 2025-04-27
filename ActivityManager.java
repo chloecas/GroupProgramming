@@ -1,4 +1,5 @@
-
+import java.util.HashMap;
+import java.util.ArrayList;
 /**
  * Write a description of class ActivityManager here.
  *
@@ -7,27 +8,63 @@
  */
 public class ActivityManager
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    private ArrayList<String> athletes;
+    private HashMap<Athlete, Activity> activityHistory;
+    private ArrayList<Activity> activities;
 
+    public static void main(String[] args)
+    {
+
+    }
+    
     /**
      * Constructor for objects of class ActivityManager
      */
     public ActivityManager()
     {
-        // initialise instance variables
-        x = 0;
+        activityHistory = new HashMap<>();
+        athletes = new ArrayList<>();
+        activities = new ArrayList<>();
+        welcomeMessage();
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * A welcome message prints as the user "opens" our app with different selection choices
      */
-    public int sampleMethod(int y)
+    public void welcomeMessage()
     {
-        // put your code here
-        return x + y;
+        System.out.println("Welcome to The Fitness Portal!");
+        System.out.println("What would you like to do today?");
+    }
+    
+    /**
+     * Adding athletes to the database of users
+     * 
+     * @param The name of the athlete to be added
+     */
+    public void addAthlete(String name)
+    {
+        athletes.add(name);
+    }
+    
+    /**
+     * Adding activities to the database of activities
+     * 
+     * @param The activity to be added
+     */
+    public void addActivity(Activity activity)
+    {
+        activities.add(activity);
+    }
+    
+    /**
+     * A method meant to print out a list of all the athlete's names in the portal
+     *
+     */
+    public void printAllAthletes()
+    {
+        for(String name : athletes) {
+            System.out.println(name);
+        }
     }
 }

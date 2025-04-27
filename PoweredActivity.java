@@ -1,22 +1,23 @@
-
+import java.util.HashMap;
 /**
  * Write a description of class PoweredActivity here.
  *
  * @author (your name)
  * @version (a version number or a date)
  */
-public class PoweredActivity
+public class PoweredActivity extends Activity 
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    private String equipment;
+    private HashMap<Activity, String> equipmentList;
 
     /**
      * Constructor for objects of class PoweredActivity
      */
-    public PoweredActivity()
+    public PoweredActivity(double distance, double duration, Modality modality, Athlete athlete, String equipment)
     {
-        // initialise instance variables
-        x = 0;
+        super(distance,duration,modality,athlete);
+        this.equipment = equipment;
+        equipmentList = new HashMap<>();
     }
 
     /**
@@ -25,9 +26,8 @@ public class PoweredActivity
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public int sampleMethod(int y)
+    public void sampleMethod()
     {
-        // put your code here
-        return x + y;
+        
     }
 }

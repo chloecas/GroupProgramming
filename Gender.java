@@ -8,7 +8,7 @@
  */
 public enum Gender
 {
-    FEMALE("Female"), MALE("Male"), NONBINARY("NonBinary");
+    FEMALE("Female"), MALE("Male"), NONBINARY("Non Binary");
     
     private String gender;
     

@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 /**
  * Write a description of class Activity here.
  *
@@ -7,16 +7,24 @@
  */
 public class Activity
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    private double distance;
+    private double duration;
+    private Modality modality;
+    private Athlete athlete;
+    private ArrayList<Activity> activities;
 
     /**
      * Constructor for objects of class Activity
      */
-    public Activity()
+    public Activity(double distance, double duration, Modality modality, Athlete athlete)
     {
-        // initialise instance variables
-        x = 0;
+        this.distance = distance;
+        this.duration = duration;
+        this.modality = modality;
+        this.athlete = athlete;
+        activities = new ArrayList<>();
+        
+        activities.add(this);
     }
 
     /**
@@ -25,9 +33,9 @@ public class Activity
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public int sampleMethod(int y)
+    public void sampleMethod()
     {
         // put your code here
-        return x + y;
+
     }
 }

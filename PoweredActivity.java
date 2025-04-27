@@ -1,9 +1,9 @@
 import java.util.HashMap;
 /**
- * Write a description of class PoweredActivity here.
+ * A specific kind of activity that users can log which requires a type of equipment.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Manal Fayyaz
+ * @version 04/27/2025
  */
 public class PoweredActivity extends Activity 
 {
@@ -26,8 +26,16 @@ public class PoweredActivity extends Activity
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public void sampleMethod()
+    public String getEquipment()
     {
-        
+         return equipment;
+    }
+    
+    public double getCaloriesBurned(){
+        return super.getCaloriesBurned() * 1.2;
+    }
+    
+    public String toString(){
+        return super.toString() + ", equipment='" + equipment + "'";
     }
 }

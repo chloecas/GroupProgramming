@@ -1,9 +1,10 @@
 import java.util.ArrayList;
 /**
- * Write a description of class Activity here.
+ * The kinds of activities users can log in our fitness app, with specifications for the 
+ * duration, modality, distance, and calories burned per exercise.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Manal Fayyaz
+ * @version 04/27/2025
  */
 public class Activity
 {
@@ -33,9 +34,27 @@ public class Activity
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public void sampleMethod()
-    {
-        // put your code here
-
+     public Athlete getAhlete(){
+       return athlete;
     }
+    
+    public Modality getModality(){
+        return modality;
+    }
+    
+     public double getDistance(){
+        return distance;
+    }
+    
+     public double getDuration(){
+        return duration;
+    }
+    
+    public double getCaloriesBurned(){
+        return distance * 50;
+    }
+    
+    public String toString(){
+        return "Activity{" + "athlete=" + athlete.getName() + ", modality=" + modality + ",distance=" + distance + " km" + ",duration=" + duration + " mins" + "}";
+    } 
 }

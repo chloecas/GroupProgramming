@@ -14,7 +14,7 @@ public class ActivityManager
 
     public static void main(String[] args)
     {
-
+     
     }
     
     /**
@@ -67,4 +67,28 @@ public class ActivityManager
             System.out.println(name);
         }
     }
+        // // Method to print all activities
+    // METHOD listAllActivities()
+        // FOR each activity IN activities
+            // PRINT activity details
+        // END FOR
+    // END METHOD
+
+    // // Method to list activities by athlete
+    // METHOD listActivitiesByAthlete(Athlete athlete)
+        // IF athlete exists in athleteActivities
+            // FOR each activity IN athleteActivities.get(athlete)
+                // PRINT activity details
+            // END FOR
+        // ELSE
+            // PRINT "No activities found for this athlete."
+        // END IF
+    // END METHOD
+
+    // // Method to print statistics
+    // METHOD printStatistics()
+        // // brainstorm details here
+        // // e.g., total distance, total activities, etc.
+    // END METHOD
+
 }

@@ -54,5 +54,4 @@ public class Athlete
         System.out.println("Height: " + height);
         System.out.println("Gender: " + gender);
     }
-    
 }

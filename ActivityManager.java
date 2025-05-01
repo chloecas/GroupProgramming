@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.ArrayList;
+import java.util.Scanner;
 /**
  * Write a description of class ActivityManager here.
  *
@@ -11,10 +12,11 @@ public class ActivityManager
     private ArrayList<String> athletes;
     private HashMap<Athlete, Activity> activityHistory;
     private ArrayList<Activity> activities;
-
+    private Scanner scanner;
+    
     public static void main(String[] args)
     {
-     
+       
     }
     
     /**
@@ -25,6 +27,7 @@ public class ActivityManager
         activityHistory = new HashMap<>();
         athletes = new ArrayList<>();
         activities = new ArrayList<>();
+        scanner = new Scanner(System.in);
         welcomeMessage();
     }
 
@@ -35,6 +38,24 @@ public class ActivityManager
     {
         System.out.println("Welcome to The Fitness Portal!");
         System.out.println("What would you like to do today?");
+        System.out.println("Type the option that best suits your needs;");
+        System.out.println("A: Log a workout!");
+        System.out.println("B: Find your total distance covered!");
+        System.out.println("C: See your total calories burned!");
+        System.out.println("D: Find your friends!");
+        
+        if(scanner.next().equals("a")) {
+            System.out.println();
+        }
+        else if(scanner.next().equals("b")) {
+               System.out.println();
+            }
+        else if(scanner.next().equals("c")) {
+                System.out.println();
+        }
+        else if(scanner.next().equals("d")) {
+                System.out.println();
+        }
     }
     
     /**
@@ -67,12 +88,22 @@ public class ActivityManager
             System.out.println(name);
         }
     }
-        // // Method to print all activities
-    // METHOD listAllActivities()
-        // FOR each activity IN activities
-            // PRINT activity details
-        // END FOR
-    // END METHOD
+    
+    public void logWorkout()
+    {
+        //workout = new Activity(double,double,Modality,Athlete);
+    }
+    /**
+     * Method to print all activities
+     
+    public void listAllActivities()
+    {   for(int i = 0; i < activities.size(); i++) {
+            activity.toString();
+            
+            }
+        
+    }
+    */
 
     // // Method to list activities by athlete
     // METHOD listActivitiesByAthlete(Athlete athlete)

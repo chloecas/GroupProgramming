@@ -2,7 +2,7 @@ import java.util.HashMap;
 /**
  * A specific kind of activity that users can log which requires a type of equipment.
  *
- * @author Manal Fayyaz
+ * @author Manal Fayyaz, Chloe
  * @version 04/27/2025
  */
 public class PoweredActivity extends Activity 
@@ -21,21 +21,26 @@ public class PoweredActivity extends Activity
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Get the equipment used for the activity
+     * @return the equipment object
      */
     public String getEquipment()
     {
-         return equipment;
+        return equipment;
     }
-    
-    public double getCaloriesBurned(){
-        return super.getCaloriesBurned() * 1.2;
+
+    /**
+     * Calculate the calories burned, with 20% boost for equipment use  
+     * @return the estimate calories burned  
+     */
+    public double calculateCaloriesBurned(){
+        return super.calculateCaloriesBurned() * 1.2;
     }
-    
-    public String toString(){
-        return super.toString() + ", equipment='" + equipment + "'";
+
+    /**
+     * Displays the details of the power activity including equipment 
+     */
+    public void display(){
+        System.out.println(super.toString() + ", equipment='" + equipment + "'");
     }
 }

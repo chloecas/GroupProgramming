@@ -1,10 +1,20 @@
 #BlueJ class context
 comment0.target=Activity
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Activity\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=
-comment1.target=Activity()
+comment0.text=\r\n\ The\ kinds\ of\ activities\ users\ can\ log\ in\ our\ fitness\ app,\ with\ specifications\ for\ the\ \r\n\ duration,\ modality,\ distance,\ and\ calories\ burned\ per\ exercise.\r\n\r\n\ @author\ Manal\ Fayyaz\r\n\ @version\ 04/27/2025\r\n
+comment1.params=distance\ duration\ modality\ athlete
+comment1.target=Activity(double,\ double,\ Modality,\ Athlete)
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Activity\r\n
-comment2.params=y
-comment2.target=int\ sampleMethod(int)
+comment2.params=
+comment2.target=Athlete\ getAthlete()
 comment2.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\r\n\ @param\ \ y\ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\r\n
-numComments=3
+comment3.params=
+comment3.target=Modality\ getModality()
+comment4.params=
+comment4.target=double\ getDistance()
+comment5.params=
+comment5.target=double\ getDuration()
+comment6.params=
+comment6.target=double\ getCaloriesBurned()
+comment7.params=
+comment7.target=java.lang.String\ toString()
+numComments=8

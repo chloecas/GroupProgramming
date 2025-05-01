@@ -1,15 +1,13 @@
 #BlueJ class context
 comment0.target=Athlete
 comment0.text=\r\n\ User\ profiles\ of\ athletes\ using\ our\ fitness\ social\ media\ portal\r\n\r\n\ @author\ Chloe\ Castrataro\r\n\ @version\ 04/16/2025\r\n
-comment1.params=name\ age\ weight\ height
-comment1.target=Athlete(java.lang.String,\ int,\ double,\ double)
+comment1.params=name\ yearOfBirth\ weight\ height\ gender
+comment1.target=Athlete(java.lang.String,\ int,\ double,\ double,\ Gender)
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Athlete\r\n\ \r\n\ Weight\ is\ in\ pounds\ (lbs)\ with\ decimals,\ Height\ is\ in\ feet\ and\ inches\ \r\n\ where\ the\ number\ after\ decimal\ is\ inch\ measurement\r\n
 comment2.params=
-comment2.target=void\ setGender()
+comment2.target=java.lang.String\ getName()
+comment2.text=\r\n\ A\ method\ to\ see\ the\ name\ entered\ in\ the\ app\r\n\r\n\ @return\ \ \ \ name\ of\ athlete\r\n
 comment3.params=
-comment3.target=java.lang.String\ getName()
-comment3.text=\r\n\ A\ method\ to\ see\ the\ name\ entered\ in\ the\ app\r\n\r\n\ @return\ \ \ \ name\ of\ athlete\r\n
-comment4.params=name
-comment4.target=void\ changeName(java.lang.String)
-comment4.text=\r\n\ A\ method\ for\ the\ user\ to\ change\ the\ name\ they\ previously\ entered\ in\ \r\n\ the\ app\r\n
-numComments=5
+comment3.target=void\ display()
+comment3.text=\r\n\ A\ method\ to\ display\ all\ of\ the\ athlete's\ personal\ information\ they\ previously\ entered\r\n
+numComments=4

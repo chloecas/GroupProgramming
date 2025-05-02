@@ -13,6 +13,7 @@ public class Athlete
     private double height;
     private Gender gender;
     private ArrayList<Athlete> athletes;
+    private int userID;
     
     /**
      * Constructor for objects of class Athlete
@@ -27,7 +28,8 @@ public class Athlete
         this.weight = weight;
         this.height = height;
         this.gender = gender;
-        athletes = new ArrayList<>();// position = athlete, name
+        athletes = new ArrayList<>();
+        userID = 0;
         
         athletes.add(this);
     }

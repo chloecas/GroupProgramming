@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 public class ActivityManager
 {
-    private ArrayList<String> athletes;
+    private ArrayList<Athlete> athletes;
     private HashMap<Athlete, Activity> activityHistory;
     private ArrayList<Activity> activities;
     private Scanner scanner;
@@ -45,7 +45,7 @@ public class ActivityManager
         System.out.println("D: Find your friends!");
         
         if(scanner.next().equals("a")) {
-            System.out.println();
+            logWorkout();
         }
         else if(scanner.next().equals("b")) {
                System.out.println();
@@ -56,16 +56,6 @@ public class ActivityManager
         else if(scanner.next().equals("d")) {
                 System.out.println();
         }
-    }
-    
-    /**
-     * Adding athletes to the database of users
-     * 
-     * @param The name of the athlete to be added
-     */
-    public void addAthlete(String name)
-    {
-        athletes.add(name);
     }
     
     /**
@@ -84,17 +74,60 @@ public class ActivityManager
      */
     public void printAllAthletes()
     {
-        for(String name : athletes) {
-            System.out.println(name);
+        for(Athlete athlete : athletes) {
+            System.out.println(athlete.getName());
         }
     }
     
+    /**
+     * 
+     */
     public void logWorkout()
     {
-        //workout = new Activity(double,double,Modality,Athlete);
-    }
-    {
-    
+        System.out.println("How long was the workout?");
+        double duration = scanner.nextDouble();
+        
+        System.out.println("How far did you go?");
+        double distance = scanner.nextDouble();
+        
+        System.out.println("What kind of workout was it?");
+        System.out.println("Option 1, 2, or 3");
+        for(Modality modality : Modality.values()) {
+            System.out.println(modality);
+        }
+        
+        int option = scanner.nextInt();
+        
+        Modality modality = Modality.DEFAULT;
+        switch(option) {
+            case 1:
+                modality = Modality.WALKING;
+               System.out.println("Walking workout chosen");
+               break;
+            
+            case 2:
+                modality = Modality.RUNNING;
+                System.out.println("Running workout chosen");
+                break;
+            
+            case 3:
+                modality = Modality.BIKING;
+                System.out.println("Biking workout chosen");
+                break;
+                
+            case 4:
+                modality = Modality.DEFAULT;
+                System.out.println(" ");
+                break;
+            }
+        //Modality walking = Modality.valueOf(scanner.nextLine());
+        
+        System.out.println("Enter your userID to confirm logged workout");
+        int userID = scanner.nextInt();
+        
+        System.out.println("Workout logged! Happy trails!");
+        Activity workout = new Activity(duration, distance, modality, userID);
+       
     }
     /**
      * Method to print all activities
@@ -108,7 +141,7 @@ public class ActivityManager
     }
     */
 
-    // Method to list activities by athlete
+    // // Method to list activities by athlete
     // METHOD listActivitiesByAthlete(Athlete athlete)
         // IF athlete exists in athleteActivities
             // FOR each activity IN athleteActivities.get(athlete)

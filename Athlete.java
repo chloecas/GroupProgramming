@@ -27,7 +27,7 @@ public class Athlete
         this.weight = weight;
         this.height = height;
         this.gender = gender;
-        athletes = new ArrayList<>();
+        athletes = new ArrayList<>();// position = athlete, name
         
         athletes.add(this);
     }

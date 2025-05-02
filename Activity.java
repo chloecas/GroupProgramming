@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.HashMap;
+
 /**
  * The kinds of activities users can log in our fitness app, with specifications for the 
  * duration, modality, distance, and calories burned per exercise.
@@ -12,8 +14,8 @@ public class Activity
     private double duration;
     private Modality modality;
     private Athlete athlete;
-    private ArrayList<Activity> activities;
-
+    private static ArrayList<Activity> activities;
+    private static HashMap<Activity, ArrayList<Athlete>> activityHistory; 
     /**
      * Constructor for objects of class Activity
      */
@@ -23,11 +25,30 @@ public class Activity
         this.duration = duration;
         this.modality = modality;
         this.athlete = athlete;
-        activities = new ArrayList<>();
-        
+     
+        if (!activityHistory.containsKey(this)){
+        activityHistory.put(this, new ArrayList<>());
+        }
+        activityHistory.get(this).add(athlete);
         activities.add(this);
     }
 
+    public ArrayList<Athlete> athleteByActivityList()
+    {
+    return activityHistory.get(this);
+    }
+    public String getNames()
+    {
+    ArrayList<Athlete> list = activityHistory.get(this);
+    if (list == null) {
+        
+    }
+    String names = "";
+    for (Athlete a: list) {
+    names += a.getName() + " ";   
+    }
+    return names.trim();
+  }
     /** 
      * Get the athlete who performed the activity
      * @return the athlete object

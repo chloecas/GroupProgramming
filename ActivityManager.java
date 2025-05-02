@@ -93,6 +93,9 @@ public class ActivityManager
     {
         //workout = new Activity(double,double,Modality,Athlete);
     }
+    {
+    
+    }
     /**
      * Method to print all activities
      
@@ -105,7 +108,7 @@ public class ActivityManager
     }
     */
 
-    // // Method to list activities by athlete
+    // Method to list activities by athlete
     // METHOD listActivitiesByAthlete(Athlete athlete)
         // IF athlete exists in athleteActivities
             // FOR each activity IN athleteActivities.get(athlete)

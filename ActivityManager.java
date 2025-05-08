@@ -13,6 +13,9 @@ public class ActivityManager
     private HashMap<Athlete, Activity> activityHistory;
     private ArrayList<Activity> activities;
     private Scanner scanner;
+    private HashMap<Integer, Double> totalDistanceById;
+    private HashMap<Integer, Double> totalDurationById;
+    private HashMap<Integer, Integer> totalCaloriesById;
     
     public static void main(String[] args)
     {
@@ -29,6 +32,9 @@ public class ActivityManager
         activities = new ArrayList<>();
         scanner = new Scanner(System.in);
         welcomeMessage();
+        totalDistanceById = new HashMap<>();
+        totalDurationById = new HashMap<>();
+        totalCaloriesById = new HashMap<>();
     }
 
     /**
@@ -54,7 +60,7 @@ public class ActivityManager
                 System.out.println();
         }
         else if(scanner.next().equals("d")) {
-                printAllAthletes(athletes);
+                System.out.println();
         }
     }
     
@@ -69,20 +75,10 @@ public class ActivityManager
     }
     
     /**
-     * Adding athletes into the database of our social media platform
-     * 
-     * @param The athlete to be added
-     */
-    public void addAthlete(Athlete athlete)
-    {
-        athletes.add(athlete);
-    }
-    
-    /**
      * A method meant to print out a list of all the athlete's names in the portal
      *
      */
-    public void printAllAthletes(ArrayList<Athlete> athletes)
+    public void printAllAthletes()
     {
         for(Athlete athlete : athletes) {
             System.out.println(athlete.getName());
@@ -94,10 +90,10 @@ public class ActivityManager
      */
     public void logWorkout()
     {
-        System.out.println("How long was the workout? (in minutes)");
+        System.out.println("How long was the workout?");
         double duration = scanner.nextDouble();
         
-        System.out.println("How far did you go? (in kilometers)");
+        System.out.println("How far did you go?");
         double distance = scanner.nextDouble();
         
         System.out.println("What kind of workout was it?");
@@ -139,6 +135,52 @@ public class ActivityManager
         Activity workout = new Activity(duration, distance, modality, userID);
        
     }
+    public void printTotalDistance()
+    {
+        System.out.print("Enter your userID: ");
+        int userID = scanner.nextInt();
+
+        System.out.print("How much distance did you just cover (in km)? ");
+        double distance = scanner.nextDouble();
+
+        double currentTotal = totalDistanceById.getOrDefault(userID, 0.0);
+
+        double updatedTotal = currentTotal + distance;
+        totalDistanceById.put(userID, updatedTotal);
+
+        System.out.println("User " + userID + ", your total distance is: " + updatedTotal + " km.");
+    }
+
+    public void printTotalDuration()
+    {
+        System.out.print("Enter your userID: ");
+        int userID = scanner.nextInt();
+
+        System.out.print("How long was your activity (in minutes)? ");
+        double duration = scanner.nextDouble();
+
+        double currentTotal = totalDurationById.getOrDefault(userID, 0.0);
+        double updatedTotal = currentTotal + duration;
+        totalDurationById.put(userID, updatedTotal);
+
+        System.out.println("User " + userID + ", your total duration is: " + updatedTotal + " minutes.");
+    }
+
+    public void printTotalCalories()
+    {
+        System.out.print("Enter your userID: ");
+        int userID = scanner.nextInt();
+
+        System.out.print("How many calories did you burn? ");
+        int calories = scanner.nextInt();
+
+        int currentTotal = totalCaloriesById.getOrDefault(userID, 0);
+        int updatedTotal = currentTotal + calories;
+        totalCaloriesById.put(userID, updatedTotal);
+
+        System.out.println("User " + userID + ", your total calories burned so far is: " + updatedTotal);
+    }
+
     /**
      * Method to print all activities
      

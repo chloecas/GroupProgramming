@@ -54,7 +54,7 @@ public class ActivityManager
                 System.out.println();
         }
         else if(scanner.next().equals("d")) {
-                System.out.println();
+                printAllAthletes(athletes);
         }
     }
     
@@ -69,10 +69,20 @@ public class ActivityManager
     }
     
     /**
+     * Adding athletes into the database of our social media platform
+     * 
+     * @param The athlete to be added
+     */
+    public void addAthlete(Athlete athlete)
+    {
+        athletes.add(athlete);
+    }
+    
+    /**
      * A method meant to print out a list of all the athlete's names in the portal
      *
      */
-    public void printAllAthletes()
+    public void printAllAthletes(ArrayList<Athlete> athletes)
     {
         for(Athlete athlete : athletes) {
             System.out.println(athlete.getName());
@@ -84,10 +94,10 @@ public class ActivityManager
      */
     public void logWorkout()
     {
-        System.out.println("How long was the workout?");
+        System.out.println("How long was the workout? (in minutes)");
         double duration = scanner.nextDouble();
         
-        System.out.println("How far did you go?");
+        System.out.println("How far did you go? (in kilometers)");
         double distance = scanner.nextDouble();
         
         System.out.println("What kind of workout was it?");

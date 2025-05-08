@@ -15,7 +15,7 @@ public class PoweredActivity extends Activity
      */
     public PoweredActivity(double distance, double duration, Modality modality, Athlete athlete, String equipment)
     {
-        super(distance,duration,modality,athlete);
+        super(distance,duration,modality,userID);
         this.equipment = equipment;
         equipmentList = new HashMap<>();
     }

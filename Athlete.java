@@ -12,7 +12,6 @@ public class Athlete
     private double weight;
     private double height;
     private Gender gender;
-    private ArrayList<Athlete> athletes;
     private int userID;
     
     /**
@@ -21,17 +20,14 @@ public class Athlete
      * Weight is in pounds (lbs) with decimals, Height is in feet and inches 
      * where the number after decimal is inch measurement
      */
-    public Athlete(String name, int yearOfBirth, double weight, double height, Gender gender)
+    public Athlete(String name, int yearOfBirth, double weight, double height, Gender gender, int userID)
     {
         this.name = name;
         this.yearOfBirth = yearOfBirth;
         this.weight = weight;
         this.height = height;
         this.gender = gender;
-        athletes = new ArrayList<>();
         userID = 0;
-        
-        athletes.add(this);
     }
     
     /**

@@ -13,8 +13,6 @@ public class Activity
     private double duration;
     private Modality modality;
     private int userID;
-    private ArrayList<Activity> activities;
-    private HashMap<Activity, Integer> activityHistory;
     private Athlete athlete;
 
     /**
@@ -26,18 +24,13 @@ public class Activity
         this.duration = duration;
         this.modality = modality;
         this.userID = userID;
-        activities = new ArrayList<>();
-        activityHistory = new HashMap<>();
-        
-        activityHistory.put(this, userID);
-        activities.add(this);
     }
 
     /** 
      * Get the athlete who performed the activity
      * @return the athlete object
      */
-     public int getAthlete(){
+     public int getAthlete(){  
        return userID;
     }
     

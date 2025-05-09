@@ -1,11 +1,15 @@
-import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.Scanner;
 /**
- * Write a description of class ActivityManager here.
+ * This class replicates a social media fitness app. The user is able to interact through input and
+ * choose various option such as logging a workout, creating a new profile, or seeing a list of
+ * existing users in the app. Our fitness app is called GlowUp.
+ * 
+ * It uses a Scanner object to read the input of the user, and ArrayLists of athletes and activities
+ * provide context for its output.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Chloe Castrataro, Manal Fayyaz
+ * @version 05/09/2025
  */
 public class ActivityManager
 {
@@ -27,40 +31,63 @@ public class ActivityManager
         activities = new ArrayList<>();
         scanner = new Scanner(System.in);
         
-        
-        createDatabase();
-        activityDatabase();
-        welcomeMessage();
+        start();
     }
-
+        
     /**
-     * A welcome message prints as the user "opens" our app with different selection choices
+     * A welcome message prints as the user "opens" our app with different selection choices.
      */
     public void welcomeMessage()
     {
-        System.out.println("Welcome to The Fitness Portal!");
+        System.out.println("Welcome to GlowUp!");
         System.out.println("What would you like to do today?");
         System.out.println("Type the option that best suits your needs;");
-        System.out.println("A: Create a profile!");
-        System.out.println("B: Log a workout!");
-        System.out.println("C: See your fitness history!");
-        System.out.println("D: Find your friends!");
+        System.out.println("1: Create a profile!");
+        System.out.println("2: Log a workout!");
+        System.out.println("3: See your fitness history!");
+        System.out.println("4: Find your friends!");
+        System.out.println("Or type 'exit' to leave the app");
         
-        if(scanner.next().equals("a")) {
-            createProfile();
-        }
-        else if(scanner.next().equals("b")) {
-               logWorkout();
-            }
-        else if(scanner.next().equals("c")) {
+        int input = scanner.nextInt();
+        switch(input) {
+            case 1: 
+                createProfile();
+                break;
+            
+            case 2:
+                logWorkout();
+                break;
+            
+            case 3:
                 System.out.println();
-        }
-        else if(scanner.next().equals("d")) {
+                break;
+                
+            case 4:
                 printAllAthletes();
+                break;
         }
     }
     
-    public void createDatabase()
+    public void start()
+    {
+        boolean hasFinished = false;
+
+        welcomeMessage();
+        
+
+        while(!hasFinished) {
+            if(scanner.next().equals("exit")) {
+                hasFinished = true;
+            }
+        }
+        System.out.println("Thank you for using GlowUp... Goodbye!");
+    }
+    
+    /**
+     * A method meant to fill the athletes ArrayList, creating pre-existing users in our app 
+     * database.
+     */
+    private void createDatabase()
     {
         Athlete athlete1 = new Athlete("Jane", 2000, 150.0, 5.6, Gender.FEMALE, 0);
         Athlete athlete2 = new Athlete("John", 1998, 175.5, 5.8, Gender.MALE, 1);
@@ -69,9 +96,13 @@ public class ActivityManager
         athletes.add(athlete1);
         athletes.add(athlete2);
         athletes.add(athlete3);
+        
     }
     
-    public void activityDatabase()
+    /**
+     * A method to fill the activities ArrayList of completed workouts by other athletes.
+     */
+    private void activityDatabase()
     {
        Activity running = new Activity(15.5, 70.3, Modality.RUNNING, 0);
        Activity walking = new Activity(5, 45.8, Modality.WALKING, 1);
@@ -103,16 +134,20 @@ public class ActivityManager
     }
     
     /**
-     * A method meant to print out a list of all the athlete's names in the portal
+     * A method meant to print out a list of all the athlete's names currently in the portal.
      *
      */
     public void printAllAthletes()
     {
+        System.out.println("Here is a list of the athletes you know;");
         for(Athlete athlete : athletes) {
             System.out.println(athlete.getName());
         }
     }
     
+    /**
+     * A method meant to print a list of all the pre-determined activity options in our app.
+     */
     public void printAllActivities()
     {
         for(Modality modality : Modality.values())
@@ -121,16 +156,87 @@ public class ActivityManager
         }
     }
     
+    /**
+     * A method that is meant to simulate creating a profile in our fitness app. The user is asked
+     * various questions, and their input is used to create an Athlete object. This object is 
+     * automatically added to an ArrayList of Athlete objects.
+     */
     public void createProfile()
     {
         System.out.println("What is your name?");
-        String name = scanner.nextLine();
+        String name = scanner.next();
         
-        System.out.println("");
+        System.out.println("What is your year of birth?");
+        int yearOfBirth = scanner.nextInt();
+        
+        System.out.println("What is your weight? In lbs");
+        double weight = scanner.nextDouble();
+        
+        System.out.println("What is your height? Please use a decimal to represent feet & inches");
+        double height = scanner.nextDouble();
+        
+        System.out.println("How do you identify? Please choose from the following options;");
+        System.out.println("Option 1, 2, 3:");
+        for(Gender gender : Gender.values()) {
+            System.out.println(gender);
+        }
+        int option = scanner.nextInt();
+        
+        Gender gender = Gender.DEFAULT;
+        switch(option) {
+            case 1:
+                gender = Gender.FEMALE;
+               System.out.println("You identify as female");
+               break;
+            
+            case 2:
+                gender = Gender.MALE;
+                System.out.println("You identify as male");
+                break;
+            
+            case 3:
+                gender = Gender.NONBINARY;
+                System.out.println("You identify as non-binary");
+                break;
+                
+            case 4:
+                gender = Gender.DEFAULT;
+                System.out.println(" ");
+                break;
+            }
+        
+        System.out.println("Your userID is a unique number meant to identify you in our systems.");
+        int userID = 3;
+        
+        System.out.println("Your userID is 3");
+        
+        Athlete athlete4 = new Athlete(name, yearOfBirth, weight, height, gender, userID);
+        athletes.add(athlete4);
+        
+        System.out.println("Welcome to GlowUp " + name + "!");
+        System.out.println("\n");
+        
+        createDatabase();
+        mainMenu();
     }
     
     /**
-     * 
+     * A method that is meant to redirect the user back to the main menu once they've completed
+     * a certain task such as logging a workout or creating a profile.
+     */
+    public void mainMenu()
+    {
+        System.out.println("Type '1' to go back to the main menu...");
+        if(scanner.nextInt() == 1) {
+            welcomeMessage();
+        }
+    }
+    
+    /**
+     * A method that is meant to simulate logging a workout in our social media app. The user will
+     * respond to various questions about the activity, and this input will be used to create an
+     * Activity object with their specifications. This object is automatically added to an ArrayList 
+     * of activities.
      */
     public void logWorkout()
     {
@@ -173,11 +279,14 @@ public class ActivityManager
         
         System.out.println("Enter your userID to confirm logged workout");
         int userID = scanner.nextInt();
-        
+     
         System.out.println("Workout logged! Happy trails!");
+        System.out.println("\n");
         Activity workout = new Activity(duration, distance, modality, userID);
         activities.add(workout);
-       
+        
+        activityDatabase();
+        mainMenu();
     }
 
     // // Method to list activities by athlete

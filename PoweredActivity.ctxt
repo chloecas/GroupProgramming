@@ -1,16 +1,16 @@
 #BlueJ class context
 comment0.target=PoweredActivity
-comment0.text=\n\ A\ specific\ kind\ of\ activity\ that\ users\ can\ log\ which\ requires\ a\ type\ of\ equipment.\n\n\ @author\ Manal\ Fayyaz,\ Chloe\n\ @version\ 04/27/2025\n
+comment0.text=\r\n\ A\ specific\ kind\ of\ activity\ that\ users\ can\ log\ which\ requires\ a\ type\ of\ equipment.\r\n\r\n\ @author\ Manal\ Fayyaz,\ Chloe\r\n\ @version\ 04/27/2025\r\n
 comment1.params=distance\ duration\ modality\ userID\ equipment
 comment1.target=PoweredActivity(double,\ double,\ Modality,\ int,\ java.lang.String)
-comment1.text=\n\ Constructor\ for\ objects\ of\ class\ PoweredActivity\n
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ PoweredActivity\r\n
 comment2.params=
 comment2.target=java.lang.String\ getEquipment()
-comment2.text=\n\ Get\ the\ equipment\ used\ for\ the\ activity\n\ @return\ the\ equipment\ object\n
+comment2.text=\r\n\ Get\ the\ equipment\ used\ for\ the\ activity\r\n\ @return\ the\ equipment\ object\r\n
 comment3.params=
 comment3.target=double\ calculateCaloriesBurned()
-comment3.text=\n\ Calculate\ the\ calories\ burned,\ with\ 20%\ boost\ for\ equipment\ use\ \ \n\ @return\ the\ estimate\ calories\ burned\ \ \n
+comment3.text=\r\n\ Calculate\ the\ calories\ burned,\ with\ 20%\ boost\ for\ equipment\ use\ \ \r\n\ @return\ the\ estimate\ calories\ burned\ \ \r\n
 comment4.params=
 comment4.target=java.lang.String\ toString()
-comment4.text=\n\ Displays\ the\ details\ of\ the\ power\ activity\ including\ equipment\ \n
+comment4.text=\r\n\ Displays\ the\ details\ of\ the\ power\ activity\ including\ equipment\ \r\n
 numComments=5

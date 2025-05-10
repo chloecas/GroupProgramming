@@ -58,7 +58,6 @@ public class Activity
         return duration;
     }
     
-    
     /**
      * Calculate the calories burned based on the distance
      * @return the estimated number of calories burned
@@ -72,6 +71,10 @@ public class Activity
      * Print the information related to activity
      */
     public String toString(){
-        return "Activity{" + "athlete=" + athlete.getName() + ", modality=" + modality + ",distance=" + distance + " km" + ",duration=" + duration + " mins" + "}";
+        return "[Activity] " +
+               " Modality: " + modality +
+               ", Distance: " + distance + " km" +
+               ", Duration: " + duration + " mins" +
+               ", Calories Burned: " + calculateCaloriesBurned();
     } 
 }

@@ -8,7 +8,8 @@
  */
 public enum Modality
 {
-    WALKING("Walking"), RUNNING("Running"), BIKING("Biking"), DEFAULT(" ");
+    WALKING("Walking"), RUNNING("Running"), BIKING("Biking"), SWIMMING ("Swimming"), 
+    ROLLERBLADING("Rollerblading"),DEFAULT(" ");
     
     private String modality;
     

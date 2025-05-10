@@ -41,6 +41,6 @@ public class PoweredActivity extends Activity
      * Displays the details of the power activity including equipment 
      */
     public String toString(){
-        return super.toString() + ", equipment='" + equipment + "'";
+        return super.toString() + ", Equipment: " + equipment;
     }
 }

@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Gender
-comment0.text=\n\ Enumeration\ class\ Gender\ -\ pre-set\ options\ for\ gender\ input\ when\ creating\ \n\ user\ profile\ on\ fitness\ app\n\n\ @author\ Chloe\ Castrataro\n\ @version\ 04/17/2025\n
+comment0.text=\r\n\ Enumeration\ class\ Gender\ -\ pre-set\ options\ for\ gender\ input\ when\ creating\ \r\n\ user\ profile\ on\ fitness\ app\r\n\r\n\ @author\ Chloe\ Castrataro\r\n\ @version\ 04/17/2025\r\n
 comment1.params=gender
 comment1.target=Gender(java.lang.String)
 comment2.params=

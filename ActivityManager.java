@@ -42,10 +42,10 @@ public class ActivityManager
         System.out.println("Welcome to GlowUp!");
         System.out.println("What would you like to do today?");
         System.out.println("Type the option that best suits your needs;");
-        System.out.println("1: Create a profile!");
-        System.out.println("2: Log a workout!");
-        System.out.println("3: See your fitness history!");
-        System.out.println("4: Find your friends!");
+        System.out.println("[1] Create a profile!");
+        System.out.println("[2] Log a workout!");
+        System.out.println("[3] See your fitness history!");
+        System.out.println("[4] Find your friends!");
         System.out.println("Or type 'exit' to leave the app");
 
         int input = scanner.nextInt();
@@ -95,7 +95,6 @@ public class ActivityManager
         athletes.add(athlete1);
         athletes.add(athlete2);
         athletes.add(athlete3);
-
     }
 
     /**
@@ -138,7 +137,7 @@ public class ActivityManager
      */
     public void printAllAthletes()
     {
-        System.out.println("Here is a list of the athletes you know;");
+        System.out.println("Here is a list of all the athletes currently using GlowUp;");
         for(Athlete athlete : athletes) {
             System.out.println(athlete.getName());
         }
@@ -203,20 +202,26 @@ public class ActivityManager
                 System.out.println(" ");
                 break;
         }
-
+        
+        System.out.println("\n");
         System.out.println("Your userID is a unique number meant to identify you in our systems.");
         int userID = 3;
 
-        System.out.println("Your userID is 3");
+        System.out.println("Your userID is [3]");
 
         Athlete athlete4 = new Athlete(name, yearOfBirth, weight, height, gender, userID);
         athletes.add(athlete4);
 
         System.out.println("Welcome to GlowUp " + name + "!");
         System.out.println("\n");
-
         createDatabase();
-        mainMenu();
+        
+        System.out.println("Would you like to see your profile? Type 'yes' or 'no'.");
+        if(scanner.next().equals("yes")) {
+            athlete4.display();
+        } else {
+            mainMenu();
+        }
     }
 
     /**
@@ -234,8 +239,8 @@ public class ActivityManager
     /**
      * A method that is meant to simulate logging a workout in our social media app. The user will
      * respond to various questions about the activity, and this input will be used to create an
-     * Activity object with their specifications. This object is automatically added to an ArrayList 
-     * of activities.
+     * Activity  or PoweredActivity object with their specifications. This object is automatically 
+     * added to an ArrayList of activities.
      */
     public void logWorkout()
     {
@@ -246,7 +251,7 @@ public class ActivityManager
         double distance = scanner.nextDouble();
 
         System.out.println("What kind of workout was it?");
-        System.out.println("Option 1, 2, or 3");
+        System.out.println("Option 1, 2, 3, 4 or 5");
         for(Modality modality : Modality.values()) {
             System.out.println(modality);
         }
@@ -271,21 +276,47 @@ public class ActivityManager
                 break;
 
             case 4:
+                modality = Modality.SWIMMING;
+                System.out.println("Swimming workout chosen");
+                break;
+            case 5:
+                modality = Modality.ROLLERBLADING;
+                System.out.println("Rollerblading workout chosen");
+                break;
+            
+            case 6:
                 modality = Modality.DEFAULT;
                 System.out.println(" ");
                 break;
         }
+        
+        System.out.println("Was any equipment used during this workout? Type 'yes' or 'no'");
+        if(scanner.next().equals("yes")) {
+            System.out.println("What equipment was used?");
+            String equipment = scanner.next();
+            
+            System.out.println("Enter your userID to confirm logged workout");
+            int userID = scanner.nextInt();
 
-        System.out.println("Enter your userID to confirm logged workout");
-        int userID = scanner.nextInt();
+            System.out.println("Workout logged! Happy trails!");
+            System.out.println("\n");
+            PoweredActivity pWorkout = new PoweredActivity(duration, distance, modality, userID,equipment);
+            activities.add(pWorkout);
 
-        System.out.println("Workout logged! Happy trails!");
-        System.out.println("\n");
-        Activity workout = new Activity(duration, distance, modality, userID);
-        activities.add(workout);
+            activityDatabase();
+            mainMenu();
+        } else {
+            System.out.println("Enter your userID to confirm logged workout");
+            int userID = scanner.nextInt();
 
-        activityDatabase();
-        mainMenu();
+            System.out.println("Workout logged! Happy trails!");
+            System.out.println("\n");
+            Activity workout = new Activity(duration, distance, modality, userID);
+            activities.add(workout);
+
+            activityDatabase();
+            mainMenu();
+        }
     }
     
     public void fitnessHistoryMenu()
@@ -299,10 +330,11 @@ public class ActivityManager
     public void fitnessHistory()
     {
         System.out.println("What would you like to see?");
-        System.out.println("1: Total Distance");
-        System.out.println("2: Total Duration");
-        System.out.println("3: Total Calories Burned");
-        System.out.println("4: Go Back to Main Menu");
+        System.out.println("[1] Total Distance");
+        System.out.println("[2] Total Duration");
+        System.out.println("[3] Total Calories Burned");
+        System.out.println("[4] Activity History");
+        System.out.println("[5] Go Back to Main Menu");
         
         int option = scanner.nextInt();
         switch (option) {
@@ -319,10 +351,13 @@ public class ActivityManager
                 break;
                 
             case 4:
+                listActivitiesByAthlete();
+                break;
+                
+            case 5:
                 mainMenu();
                 break;
-        }
-
+            }
     }
 
     public void printTotalDistance()
@@ -376,22 +411,26 @@ public class ActivityManager
         fitnessHistoryMenu();
     }
 
-
-    // // Method to list activities by athlete
-    // METHOD listActivitiesByAthlete(Athlete athlete)
-    // IF athlete exists in athleteActivities
-    // FOR each activity IN athleteActivities.get(athlete)
-    // PRINT activity details
-    // END FOR
-    // ELSE
-    // PRINT "No activities found for this athlete."
-    // END IF
-    // END METHOD
-
-    // // Method to print statistics
-    // METHOD printStatistics()
-    // // brainstorm details here
-    // // e.g., total distance, total activities, etc.
-    // END METHOD
-
+    public void listActivitiesByAthlete()
+    {
+        System.out.println("Enter your userID to access your activity history!");
+        int userID = scanner.nextInt();
+        
+        for(Activity activity: activities) {
+            if(activity.getAthlete() == userID) {
+               System.out.println(activity.toString());
+               System.out.println("\n");
+               System.out.println("Nice job!");
+            } else {
+                System.out.println("No activities found for this athlete.");
+            }
+        }
+    }
+    
+    public void listAllActivities()
+    {
+        for (Activity activity : activities) {
+            System.out.println(activity);
+        }
+    }
 }

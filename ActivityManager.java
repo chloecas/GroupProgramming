@@ -288,12 +288,21 @@ public class ActivityManager
         mainMenu();
     }
     
+    public void fitnessHistoryMenu()
+    {
+        System.out.println("Type '0' to go back to the fitnessHistory...");
+        if(scanner.nextInt() == 0) {
+            fitnessHistory();
+        }
+    }
+    
     public void fitnessHistory()
     {
         System.out.println("What would you like to see?");
         System.out.println("1: Total Distance");
         System.out.println("2: Total Duration");
         System.out.println("3: Total Calories Burned");
+        System.out.println("4: Go Back to Main Menu");
         
         int option = scanner.nextInt();
         switch (option) {
@@ -309,7 +318,11 @@ public class ActivityManager
                 printTotalCalories();
                 break;
                 
+            case 4:
+                mainMenu();
+                break;
         }
+
     }
 
     public void printTotalDistance()
@@ -326,7 +339,7 @@ public class ActivityManager
         }
         System.out.println("The total distance is: " + totalDistance + " kilometers");
          
-        mainMenu();
+       fitnessHistoryMenu();
     }
     
     public void printTotalDuration()
@@ -343,7 +356,7 @@ public class ActivityManager
         }
         System.out.println("The total duration is: " + totalDuration+ " minutes.");
          
-        mainMenu();
+        fitnessHistoryMenu();
     }
     
     public void printTotalCalories()
@@ -360,7 +373,7 @@ public class ActivityManager
         }
         System.out.println("You have burned a total of: " + totalCalories + " calories");
          
-        mainMenu();
+        fitnessHistoryMenu();
     }
 
 

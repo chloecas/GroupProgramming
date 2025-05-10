@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=PoweredActivity
 comment0.text=\n\ A\ specific\ kind\ of\ activity\ that\ users\ can\ log\ which\ requires\ a\ type\ of\ equipment.\n\n\ @author\ Manal\ Fayyaz,\ Chloe\n\ @version\ 04/27/2025\n
-comment1.params=distance\ duration\ modality\ athlete\ equipment
-comment1.target=PoweredActivity(double,\ double,\ Modality,\ Athlete,\ java.lang.String)
+comment1.params=distance\ duration\ modality\ userID\ equipment
+comment1.target=PoweredActivity(double,\ double,\ Modality,\ int,\ java.lang.String)
 comment1.text=\n\ Constructor\ for\ objects\ of\ class\ PoweredActivity\n
 comment2.params=
 comment2.target=java.lang.String\ getEquipment()
@@ -11,6 +11,6 @@ comment3.params=
 comment3.target=double\ calculateCaloriesBurned()
 comment3.text=\n\ Calculate\ the\ calories\ burned,\ with\ 20%\ boost\ for\ equipment\ use\ \ \n\ @return\ the\ estimate\ calories\ burned\ \ \n
 comment4.params=
-comment4.target=void\ display()
+comment4.target=java.lang.String\ toString()
 comment4.text=\n\ Displays\ the\ details\ of\ the\ power\ activity\ including\ equipment\ \n
 numComments=5

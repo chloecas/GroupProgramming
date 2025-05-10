@@ -13,7 +13,7 @@ public class PoweredActivity extends Activity
     /**
      * Constructor for objects of class PoweredActivity
      */
-    public PoweredActivity(double distance, double duration, Modality modality, Athlete athlete, String equipment)
+    public PoweredActivity(double distance, double duration, Modality modality, int userID , String equipment)
     {
         super(distance,duration,modality,userID);
         this.equipment = equipment;
@@ -40,7 +40,7 @@ public class PoweredActivity extends Activity
     /**
      * Displays the details of the power activity including equipment 
      */
-    public void display(){
-        System.out.println(super.toString() + ", equipment='" + equipment + "'");
+    public String toString(){
+        return super.toString() + ", equipment='" + equipment + "'";
     }
 }

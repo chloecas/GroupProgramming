@@ -71,7 +71,7 @@ public class Activity
     /**
      * Print the information related to activity
      */
-    public void display(){
-        System.out.println("Activity{" + "athlete=" + athlete.getName() + ", modality=" + modality + ",distance=" + distance + " km" + ",duration=" + duration + " mins" + "}");
+    public String toString(){
+        return "Activity{" + "athlete=" + athlete.getName() + ", modality=" + modality + ",distance=" + distance + " km" + ",duration=" + duration + " mins" + "}";
     } 
 }

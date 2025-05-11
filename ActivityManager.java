@@ -141,6 +141,7 @@ public class ActivityManager
         for(Athlete athlete : athletes) {
             System.out.println(athlete.getName());
         }
+        mainMenu();
     }
 
     /**
@@ -219,6 +220,7 @@ public class ActivityManager
         System.out.println("Would you like to see your profile? Type 'yes' or 'no'.");
         if(scanner.next().equals("yes")) {
             athlete4.display();
+            mainMenu();
         } else {
             mainMenu();
         }
@@ -436,10 +438,12 @@ public class ActivityManager
                System.out.println(activity.toString());
                System.out.println("\n");
                System.out.println("Nice job!");
-            } else {
-                System.out.println("No activities found for this athlete.");
-            }
+            // } else {
+                // System.out.println("No activities found for this athlete.");
+            // 
+           }
         }
+        fitnessHistoryMenu();
     }
     
     public void listAllActivities()

@@ -319,14 +319,20 @@ public class ActivityManager
         }
     }
     
+    /**
+     * A method that will call fitnessHistory() to show the options again.  
+     */
     public void fitnessHistoryMenu()
     {
         System.out.println("Type '0' to go back to the fitnessHistory...");
         if(scanner.nextInt() == 0) {
-            fitnessHistory();
+         fitnessHistory();
         }
     }
     
+    /**
+     * A method that is meant to display a menu for viewing various fitness statistics.
+     */
     public void fitnessHistory()
     {
         System.out.println("What would you like to see?");
@@ -360,6 +366,9 @@ public class ActivityManager
             }
     }
 
+    /**
+     * A method that will print total distance for a given userID.
+     */
     public void printTotalDistance()
     {
         System.out.println("Enter your userID to see how far you've gone:");
@@ -374,9 +383,12 @@ public class ActivityManager
         }
         System.out.println("The total distance is: " + totalDistance + " kilometers");
          
-       fitnessHistoryMenu();
+        fitnessHistoryMenu();
     }
     
+    /**
+     * A method that will print total duration of an activity for a given userID
+     */
     public void printTotalDuration()
     {
         System.out.println("Enter your userID to see how long you've worked out:");
@@ -394,6 +406,9 @@ public class ActivityManager
         fitnessHistoryMenu();
     }
     
+    /**
+     * A method that will print total calories burned for a given userID
+     */
     public void printTotalCalories()
     {
         System.out.println("Enter your userID to see how many calories you have burned:");

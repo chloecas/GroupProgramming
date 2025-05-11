@@ -27,7 +27,7 @@ public class Athlete
         this.weight = weight;
         this.height = height;
         this.gender = gender;
-        userID = 0;
+        this.userID= userID;
     }
     
     /**
@@ -43,13 +43,13 @@ public class Athlete
     /**
      * A method to display all of the athlete's personal information they previously entered
      */
-    public void display()
+    public String toString()
     {
-        System.out.println("Welcome " + name + "!");
-        System.out.println("Here are your user details; ");
-        System.out.println("Year of Birth: " + yearOfBirth);
-        System.out.println("Weight: " + weight);
-        System.out.println("Height: " + height);
-        System.out.println("Gender: " + gender);
+        return "Welcome " + name + "!" +
+                "Here are your user details; " +
+                "Year of Birth: " + yearOfBirth +
+                "Weight: " + weight +
+                "Height: " + height +
+                "Gender: " + gender;
     }
 }

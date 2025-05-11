@@ -8,6 +8,6 @@ comment2.params=
 comment2.target=java.lang.String\ getName()
 comment2.text=\r\n\ A\ method\ to\ see\ the\ name\ entered\ in\ the\ app\r\n\r\n\ @return\ \ \ \ name\ of\ athlete\r\n
 comment3.params=
-comment3.target=void\ display()
+comment3.target=java.lang.String\ toString()
 comment3.text=\r\n\ A\ method\ to\ display\ all\ of\ the\ athlete's\ personal\ information\ they\ previously\ entered\r\n
 numComments=4

@@ -411,20 +411,12 @@ public class ActivityManager
     
     public void listActivitiesByMode()
     {
-        // System.out.println("What kind of workout do you want to see?");
-        // int option = scanner.nextInt();
-        
-        // Activity activity = 
-        // switch(option) {
-            // case 1: 
-        // }
-        
         for(Activity activity: activities) {
-            if(activity.getModality() == Modality.BIKING) {
+            if(activity.getModality() == Modality.WALKING) {
                 System.out.println(activity.toString());
             } else if(activity.getModality() == Modality.RUNNING) {
                 System.out.println(activity.toString());
-            } else if(activity.getModality() == Modality.WALKING) {
+            } else if(activity.getModality() == Modality.BIKING) {
                 System.out.println(activity.toString());
             } else if(activity.getModality() == Modality.ROLLERBLADING) {
                 System.out.println(activity.toString()); 
@@ -440,5 +432,7 @@ public class ActivityManager
         for (Activity activity : activities) {
             System.out.println(activity);
         }
+        }
     }
-}
+    
+

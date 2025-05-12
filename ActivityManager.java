@@ -19,7 +19,7 @@ public class ActivityManager
 
     public static void main(String[] args)
     {
-
+        ActivityManager manager = new ActivityManager();
     }
 
     /**
@@ -30,8 +30,7 @@ public class ActivityManager
         athletes = new ArrayList<>();
         activities = new ArrayList<>();
         scanner = new Scanner(System.in);
-
-        start();
+        welcomeMessage();
     }
 
     /**
@@ -46,10 +45,13 @@ public class ActivityManager
         System.out.println("[2] Log a workout!");
         System.out.println("[3] See your fitness history!");
         System.out.println("[4] Find your friends!");
-        System.out.println("Or type 'exit' to leave the app");
+        System.out.println("Or type [0] to leave the app");
 
         int input = scanner.nextInt();
         switch(input) {
+            case 0:
+                System.out.println("Thank you for using GlowUp... Goodbye!");
+                break;
             case 1: 
                createProfile();
                 break;
@@ -64,22 +66,9 @@ public class ActivityManager
 
             case 4:
                 printAllAthletes();
+                listAllActivities();
                 break;
         }
-    }
-
-    public void start()
-    {
-        boolean hasFinished = false;
-
-        welcomeMessage();
-
-        while(!hasFinished) {
-            if(scanner.next().equals("exit")) {
-                hasFinished = true;
-            }
-        }
-        System.out.println("Thank you for using GlowUp... Goodbye!");
     }
 
     /**
@@ -148,9 +137,9 @@ public class ActivityManager
      */
     public void printAllActivities()
     {
-        for(Modality modality : Modality.values())
+        for(Activity activity : activities)
         {
-            System.out.println(modality);
+            System.out.println(activity);
         }
     }
 
@@ -216,12 +205,6 @@ public class ActivityManager
         System.out.println("\n");
         createDatabase();
         mainMenu();
-        // System.out.println("Would you like to see your profile? Type 'yes' or 'no'.");
-        // if(scanner.next().equals("yes")) {
-            // athlete4.toString();
-        // } else {
-            // mainMenu();
-        // }
     }
 
     /**
@@ -426,8 +409,34 @@ public class ActivityManager
         fitnessHistoryMenu();
     }
     
+    public void listActivitiesByMode()
+    {
+        // System.out.println("What kind of workout do you want to see?");
+        // int option = scanner.nextInt();
+        
+        // Activity activity = 
+        // switch(option) {
+            // case 1: 
+        // }
+        
+        for(Activity activity: activities) {
+            if(activity.getModality() == Modality.BIKING) {
+                System.out.println(activity.toString());
+            } else if(activity.getModality() == Modality.RUNNING) {
+                System.out.println(activity.toString());
+            } else if(activity.getModality() == Modality.WALKING) {
+                System.out.println(activity.toString());
+            } else if(activity.getModality() == Modality.ROLLERBLADING) {
+                System.out.println(activity.toString()); 
+            }  else if(activity.getModality() == Modality.SWIMMING) {
+                System.out.println(activity.toString());
+            }
+        }
+    }
+    
     public void listAllActivities()
     {
+        System.out.println("These are all the workouts you and your friends have completed!");
         for (Activity activity : activities) {
             System.out.println(activity);
         }

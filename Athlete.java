@@ -17,8 +17,12 @@ public class Athlete
     /**
      * Constructor for objects of class Athlete
      * 
-     * Weight is in pounds (lbs) with decimals, Height is in feet and inches 
-     * where the number after decimal is inch measurement
+     * @param name   name of athlete
+     * @param yearOfBirth   birth year of the athlete
+     * @param weight   weight of athlete in pounds (lbs)
+     * @param height   height of athlete in feet and inches
+     * @param gender    gender of athlete chosen from a list of enum values
+     * @param userID   ID number to identify athlete in the system
      */
     public Athlete(String name, int yearOfBirth, double weight, double height, Gender gender, int userID)
     {
@@ -30,14 +34,19 @@ public class Athlete
         this.userID= userID;
     }
     
-    public boolean equals(Athlete athlete){
-        return (this == athlete);
+    /**
+     * A method meant to compare two Athletes objects to see if they are the same.
+     * @param   Athlete object to be compared
+     * @return   true if athlete is the same, false is they are not
+     */
+    public boolean equals(Athlete athlete)
+    {
+        return(this == athlete);
     }
     
     /**
      * A method to see the name entered in the app
-     *
-     * @return    name of athlete
+     * @return    Name of athlete
      */
     public String getName()
     {
@@ -46,6 +55,7 @@ public class Athlete
     
     /**
      * A method to display all of the athlete's personal information they previously entered
+     * @return   A description of the Athlete object and its field values as a String
      */
     public String toString()
     {

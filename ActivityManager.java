@@ -17,13 +17,16 @@ public class ActivityManager
     private ArrayList<Activity> activities;
     private Scanner scanner;
 
+    /**
+     * This is the main method so that this program can run outsude BlueJ.
+     */
     public static void main(String[] args)
     {
         ActivityManager manager = new ActivityManager();
     }
 
     /**
-     * Constructor for objects of class ActivityManager
+     * Constructor for objects of class ActivityManager.
      */
     public ActivityManager()
     {
@@ -101,9 +104,9 @@ public class ActivityManager
     }
 
     /**
-     * Adding activities to the database of activities
+     * Adding activities to the database of activities.
      * 
-     * @param The activity to be added
+     * @param The activity to be added.
      */
     public void addActivity(Activity activity)
     {
@@ -111,9 +114,9 @@ public class ActivityManager
     }
 
     /**
-     * Adding athletes into the database of our social media platform
+     * Adding athletes into the database of our social media platform.
      * 
-     * @param The athlete to be added
+     * @param The athlete to be added.
      */
     public void addAthlete(Athlete athlete)
     {
@@ -303,6 +306,9 @@ public class ActivityManager
         }
     }
     
+    /**
+     * A method that will call fitnessHistory() to show the options again.
+     */
     public void fitnessHistoryMenu()
     {
         System.out.println("Type '0' to go back to the fitnessHistory...");
@@ -311,6 +317,9 @@ public class ActivityManager
         }
     }
     
+    /**
+     * A method that is meant to displaya menu for viewig various fitness statistics.
+     */
     public void fitnessHistory()
     {
         System.out.println("What would you like to see?");
@@ -344,6 +353,9 @@ public class ActivityManager
             }
     }
 
+    /**
+     * A method that will print total distance for a given userID. 
+     */
     public void printTotalDistance()
     {
         System.out.println("Enter your userID to see how far you've gone:");
@@ -361,6 +373,9 @@ public class ActivityManager
        fitnessHistoryMenu();
     }
     
+    /**
+     * A method that will print total duration of an activity for a given userID. 
+     */
     public void printTotalDuration()
     {
         System.out.println("Enter your userID to see how long you've worked out:");
@@ -378,6 +393,9 @@ public class ActivityManager
         fitnessHistoryMenu();
     }
     
+    /**
+     * A method that will print total calories burned for a given userID. 
+     */
     public void printTotalCalories()
     {
         System.out.println("Enter your userID to see how many calories you have burned:");
@@ -395,6 +413,9 @@ public class ActivityManager
         fitnessHistoryMenu();
     }
 
+    /**
+     * This method will print all the activity done by athlete through their userID.
+     */
     public void listActivitiesByAthlete()
     {
         System.out.println("Enter your userID to access your activity history!");
@@ -410,6 +431,9 @@ public class ActivityManager
         fitnessHistoryMenu();
     }
     
+    /**
+     * This method will print all the activity by their modality.  
+     */
     public void listActivitiesByMode()
     {
         for(Activity activity: activities) {
@@ -427,6 +451,9 @@ public class ActivityManager
         }
     }
     
+    /**
+     * This method will print all the activity done by all the athletes.
+     */
     public void listAllActivities()
     {
         System.out.println("These are all the workouts you and your friends have completed!");

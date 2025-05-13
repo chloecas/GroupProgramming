@@ -71,7 +71,7 @@ public class Activity
      * Print the information related to activity
      */
     public String toString(){
-        return "[Activity] " +
+        return "[Activity] " + "Athlete ID: " + userID +
                " Modality: " + modality +
                ", Distance: " + distance + " km" +
                ", Duration: " + duration + " mins" +

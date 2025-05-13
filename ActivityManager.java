@@ -194,7 +194,8 @@ public class ActivityManager
         
         System.out.println("\n");
         System.out.println("Your userID is a unique number meant to identify you in our systems.");
-        int userID = 3;
+        System.out.println("What would you like your userID to be?");
+        int userID = scanner.nextInt();
 
         System.out.println("Your userID is [" + userID + "]");
 
@@ -432,7 +433,5 @@ public class ActivityManager
         for (Activity activity : activities) {
             System.out.println(activity);
         }
-        }
     }
-    
-
+}

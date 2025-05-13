@@ -54,6 +54,51 @@ public class Athlete
     }
     
     /**
+     * A method to see the birth year entered in the app
+     * @return    birth year of athlete
+     */
+    public int getYearOfBirth()
+    {
+        return yearOfBirth;
+    }
+
+    /**
+     * A method to see the weight entered in the app
+     * @return    weight of athlete
+     */
+    public double getWeight()
+    {
+        return weight;
+    }
+    
+    /**
+     * A method to see the height entered in the app
+     * @return    height of athlete
+     */
+    public double getHeight()
+    {
+        return height;
+    }
+    
+    /**
+     * A method to see the gender chosen from list of pre-set values 
+     * @return    gender of athlete
+     */
+    public Gender getGender()
+    {
+        return gender;
+    }
+    
+    /**
+     * A method to see the userID entered by the athlete
+     * @return    userID of athlete
+     */
+    public int getUserID()
+    {
+        return userID;
+    }
+    
+    /**
      * A method to display all of the athlete's personal information they previously entered
      * @return   A description of the Athlete object and its field values as a String
      */
@@ -67,3 +112,4 @@ public class Athlete
                 "Gender: " + gender;
     }
 }
+

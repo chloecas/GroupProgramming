@@ -8,7 +8,6 @@ import java.util.HashMap;
 public class PoweredActivity extends Activity 
 {
     private String equipment;
-    private HashMap<Activity, String> equipmentList;
 
     /**
      * Constructor for objects of class PoweredActivity
@@ -17,7 +16,6 @@ public class PoweredActivity extends Activity
     {
         super(distance,duration,modality,userID);
         this.equipment = equipment;
-        equipmentList = new HashMap<>();
     }
 
     /**

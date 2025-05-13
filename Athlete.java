@@ -30,6 +30,10 @@ public class Athlete
         this.userID= userID;
     }
     
+    public boolean equals(Athlete athlete){
+        return (this == athlete);
+    }
+    
     /**
      * A method to see the name entered in the app
      *

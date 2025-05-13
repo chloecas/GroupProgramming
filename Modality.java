@@ -13,11 +13,19 @@ public enum Modality
     
     private String modality;
     
+    /**
+     * A method to assign a modality to an enum and assign it a value.
+     * @Param modality to be assigned.
+     */
     Modality(String modality)
     {
         this.modality = modality;
     }
     
+    
+    /**
+     * @Return modality as a String to be used outside of this specific class.
+     */
     public String toString()
     {
         return modality;

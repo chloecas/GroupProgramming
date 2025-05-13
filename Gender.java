@@ -12,11 +12,19 @@ public enum Gender
     
     private String gender;
     
+    /**
+     * A method to construct an an enum and assign it a value.
+     * @param Gender to be assigned.
+     * 
+     */
     Gender(String gender)
     {
         this.gender = gender;
     }
     
+    /**
+     * @Return Gender as a String, to be used outside of this class.
+     */
     public String toString()
     {
         return gender;

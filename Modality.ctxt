@@ -1,10 +1,10 @@
 #BlueJ class context
 comment0.target=Modality
-comment0.text=\r\n\ Enumeration\ class\ Modality\ -\ The\ various\ preset\ modes\ of\ \r\n\ transportation\ recognized\ by\ our\ fitness\ app\r\n\r\n\ @author\ Chloe\ Castrataro\r\n\ @version\ 04/17/2025\r\n
+comment0.text=\r\n\ Enumeration\ class\ Modality\ -\ The\ various\ preset\ modes\ of\ \r\n\ transportation\ recognized\ by\ our\ fitness\ app\r\n\r\n\ @author\ Chloe\ Castrataro\ &\ Jesse\ \r\n\ @version\ 05/14/2025\r\n
 comment1.params=modality
 comment1.target=Modality(java.lang.String)
-comment1.text=\r\n\ A\ method\ to\ assign\ a\ modality\ to\ an\ enum\ and\ assign\ it\ a\ value.\r\n\ @Param\ modality\ to\ be\ assigned.\r\n
+comment1.text=\r\n\ Constructor\ of\ enum\ Modality\r\n\ @param\ assigning\ the\ enum\ a\ specified\ value\ from\ the\ list\ of\ constants.\r\n
 comment2.params=
 comment2.target=java.lang.String\ toString()
-comment2.text=\r\n\ @Return\ modality\ as\ a\ String\ to\ be\ used\ outside\ of\ this\ specific\ class.\r\n
+comment2.text=\r\n\ A\ method\ to\ create\ a\ String\ representation\ of\ Modality\ object\r\n\ @return\ \ modality\ as\ a\ String\ to\ be\ used\ outside\ of\ this\ specific\ class.\r\n
 numComments=3

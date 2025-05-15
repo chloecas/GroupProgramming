@@ -17,6 +17,10 @@ public class Activity
 
     /**
      * Constructor for objects of class Activity
+     * @param distance  distance completed by workout in kilometres
+     * @param duration  duration of workout in minutes
+     * @param modality  Modality of workout, chosen from list of enums 
+     * @param userID  unique ID of athlete to link workout with their personal file
      */
     public Activity(double distance, double duration, Modality modality, int userID)
     {
@@ -69,6 +73,7 @@ public class Activity
     
     /**
      * Print the information related to activity
+     * @return  a String representation of the Activity object and its field values
      */
     public String toString(){
         return "[Activity] " + "Athlete ID: " + userID +

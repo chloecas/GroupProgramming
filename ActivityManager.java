@@ -18,7 +18,7 @@ public class ActivityManager
     private Scanner scanner;
 
     /**
-     * This is the main method so that this program can run outsude BlueJ.
+     * This is the main method so that this program can run outside BlueJ.
      */
     public static void main(String[] args)
     {
@@ -124,6 +124,24 @@ public class ActivityManager
     }
 
     /**
+     * Mainly meant for testing purposes
+     * @return   returns entire ArrayList of Activity objects
+     */
+    public ArrayList<Activity> getActivities()
+    {
+        return activities;
+    }
+    
+    /**
+     * Mainly meant for testing purposes
+     * @return   returns entire ArrayList of Athlete objects
+     */
+    public ArrayList<Athlete> getAthletes()
+    {
+        return athletes;
+    }
+    
+    /**
      * A method meant to print out a list of all the athlete's names currently in the portal.
      *
      */
@@ -132,17 +150,6 @@ public class ActivityManager
         System.out.println("Here is a list of all the athletes currently using GlowUp;");
         for(Athlete athlete : athletes) {
             System.out.println(athlete.getName());
-        }
-    }
-
-    /**
-     * A method meant to print a list of all the pre-determined activity options in our app.
-     */
-    public void printAllActivities()
-    {
-        for(Activity activity : activities)
-        {
-            System.out.println(activity);
         }
     }
 
@@ -307,7 +314,8 @@ public class ActivityManager
     }
     
     /**
-     * A method that will call fitnessHistory() to show the options again.
+     * A method that will return the user back to the beginning of the option tree for fitness 
+     * history.
      */
     public void fitnessHistoryMenu()
     {
@@ -318,7 +326,7 @@ public class ActivityManager
     }
     
     /**
-     * A method that is meant to displaya menu for viewig various fitness statistics.
+     * A method that is meant to display a menu for viewing various fitness statistics.
      */
     public void fitnessHistory()
     {
@@ -414,7 +422,7 @@ public class ActivityManager
     }
 
     /**
-     * This method will print all the activity done by athlete through their userID.
+     * This method will print all the activities done by a specific athlete using their userID.
      */
     public void listActivitiesByAthlete()
     {
@@ -432,27 +440,56 @@ public class ActivityManager
     }
     
     /**
-     * This method will print all the activity by their modality.  
+     * This method will print all activities by their modality.  
      */
-    public void listActivitiesByMode()
+    public void listActivitiesByMode(Modality modality)
     {
+        System.out.println("What kind of workout would you like to see?");
+        System.out.println("Option [1] Walking" + "\n");
+        System.out.println("Option [2] Running" + "\n");
+        System.out.println("Option [3] Biking" + "\n");
+        System.out.println("Option [4] Rollerblading" + "\n");
+        System.out.println("Option [5] Swimming" + "\n");
+        
+        int option = scanner.nextInt();
+        
         for(Activity activity: activities) {
-            if(activity.getModality() == Modality.WALKING) {
-                System.out.println(activity.toString());
-            } else if(activity.getModality() == Modality.RUNNING) {
-                System.out.println(activity.toString());
-            } else if(activity.getModality() == Modality.BIKING) {
-                System.out.println(activity.toString());
-            } else if(activity.getModality() == Modality.ROLLERBLADING) {
-                System.out.println(activity.toString()); 
-            }  else if(activity.getModality() == Modality.SWIMMING) {
-                System.out.println(activity.toString());
-            }
-        }
+             switch(option) {
+                case 1:  
+                    modality = Modality.WALKING;
+                    System.out.println(activity);
+                    break;
+                
+                case 2: 
+                    modality = Modality.RUNNING;
+                    System.out.println(activity);
+                    break;
+                    
+                case 3:
+                    modality = Modality.BIKING;
+                    System.out.println(activity);
+                    break;
+                    
+                case 4: 
+                    modality = Modality.ROLLERBLADING;
+                    System.out.println(activity);
+                    break;
+                    
+                case 5:
+                    modality = Modality.SWIMMING;
+                    System.out.println(activity);
+                    break;
+                
+                case 6:
+                    modality = Modality.DEFAULT;
+                    System.out.println(" ");
+                    break;
+                }
+            } 
     }
     
     /**
-     * This method will print all the activity done by all the athletes.
+     * This method will print all the activities logged by all the athletes.
      */
     public void listAllActivities()
     {

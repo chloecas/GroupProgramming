@@ -51,6 +51,53 @@ public class AthleteTest
         assertEquals(49, athlete1.getWeight(), 0.1);
         assertEquals(2005, athlete1.getYearOfBirth());
     }
+
+    @Test
+    public void getNameTest()
+    {
+        Athlete athlete1 = new Athlete("Chloe", 1998, 34.5, 5.3, Gender.NONBINARY, 3);
+        assertEquals("Chloe", athlete1.getName());
+    }
+
+    @Test
+    public void getYOBTest()
+    {
+        Athlete athlete1 = new Athlete("Chloe", 1998, 34.5, 5.3, Gender.NONBINARY, 3);
+        assertEquals(1998, athlete1.getYearOfBirth());
+    }
+
+    @Test
+    public void getWeightTest()
+    {
+        Athlete athlete1 = new Athlete("Chloe", 1998, 34.5, 5.3, Gender.NONBINARY, 3);
+        assertEquals(34.5, athlete1.getWeight(), 0.1);
+    }
+    
+    @Test
+    public void getHeightTest()
+    {
+        Athlete athlete1 = new Athlete("Chloe", 1998, 34.5, 5.3, Gender.NONBINARY, 3);
+        assertEquals(5.3, athlete1.getHeight(), 0.1);
+    }
+
+    @Test
+    public void getGenderTest()
+    {
+        Athlete athlete1 = new Athlete("Chloe", 1998, 34.5, 5.3, Gender.NONBINARY, 3);
+        assertEquals(Gender.NONBINARY, athlete1.getGender());
+    }
+
+    @Test
+    public void getUserIDTest()
+    {
+        Athlete athlete1 = new Athlete("Chloe", 1998, 34.5, 5.3, Gender.NONBINARY, 3);
+        assertEquals(3, athlete1.getUserID());
+    }
 }
+
+
+
+
+
 
 

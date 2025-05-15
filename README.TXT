@@ -8,6 +8,9 @@ PROJECT TITLE: Fitness App
 PURPOSE OF PROJECT: Create a fitness social media portal, similar to Strava.
 It will have user profiles, pre-set activities, and create logs of distance and
 time per activity for the user. This is for a project in Programming 1 course
-VERSION or DATE: v1 04/18/2025
+VERSION or DATE: v5 05/14/2025
 AUTHORS: Chloe Castratara, Jesse Oliver Dong-Morin, and Manal Fayyaz
-USER INSTRUCTIONS:
+USER INSTRUCTIONS: Create an ActivityManager object to start our fitness social 
+media app GlowUp. You will be prompted to create a profile, log a workout, and
+see the fitness history of other users in the app. This program is input based,
+the user will decide what functions are executed at every runtime.

@@ -3,8 +3,8 @@
  * Enumeration class Modality - The various preset modes of 
  * transportation recognized by our fitness app
  *
- * @author Chloe Castrataro
- * @version 04/17/2025
+ * @author Chloe Castrataro & Jesse 
+ * @version 05/14/2025
  */
 public enum Modality
 {
@@ -14,8 +14,8 @@ public enum Modality
     private String modality;
     
     /**
-     * A method to assign a modality to an enum and assign it a value.
-     * @Param modality to be assigned.
+     * Constructor of enum Modality
+     * @param assigning the enum a specified value from the list of constants.
      */
     Modality(String modality)
     {
@@ -24,7 +24,8 @@ public enum Modality
     
     
     /**
-     * @Return modality as a String to be used outside of this specific class.
+     * A method to create a String representation of Modality object
+     * @return  modality as a String to be used outside of this specific class.
      */
     public String toString()
     {

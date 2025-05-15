@@ -66,7 +66,7 @@ public class ActivityTest
     public void getModalityTest()
     {
         Activity activity1 = new Activity(12.2, 12.2, Modality.WALKING, 9);
-        assertEquals("Walking", activity1.getModality());
+        assertEquals(Modality.WALKING, activity1.getModality());
     }
 
     @Test
@@ -75,8 +75,6 @@ public class ActivityTest
         Activity activity1 = new Activity(12.2, 12.2, Modality.WALKING, 9);
         assertEquals(610, activity1.calculateCaloriesBurned(), 0.1);
     }
-
- 
 }
 
 
